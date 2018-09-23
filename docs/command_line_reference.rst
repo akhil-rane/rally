@@ -145,6 +145,19 @@ You can use ``--include-tasks`` to specify a comma-separated list of tasks that 
 * Execute only tasks of type ``search``: ``--include-tasks="type:search"``
 * You can also mix and match: ``--include-tasks="index,type:search"``
 
+`exclude-tasks``
+~~~~~~~~~~~~~~~~~
+
+Each challenge consists of one or more tasks but sometimes you want to exclude some of the tasks from the run. For example, you might have prepared an index already and want only to repeatedly run search benchmarks. Here you would like to exclude the indexing task.
+
+You can use ``--exclude-tasks`` to specify a comma-separated list of tasks that you want to be excluded from run. Each item in the list defines either the name of a task or the operation type of a task. the tasks that match will be excluded. Currently there is also no command that lists the tasks of a challenge so you need to look at the track source.
+
+**Examples**:
+
+* Exclude the tasks with the name ``index`` and ``term``: ``--exclude-tasks="index,term"``
+* Exclude the tasks of type ``search``: ``--exclude-tasks="type:search"``
+* You can also mix and match: ``--exclude-tasks="index,type:search"``
+
 ``team-repository``
 ~~~~~~~~~~~~~~~~~~~
 

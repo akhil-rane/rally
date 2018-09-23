@@ -76,6 +76,10 @@ def load_track(cfg):
         track_dir = repo.track_dir(track_name)
         reader = TrackFileReader(cfg)
         included_tasks = cfg.opts("track", "include.tasks")
+        excluded_tasks = cfg.opts("track", "exclude.tasks")
+
+        print(excluded_tasks)
+
 
         current_track = reader.read(track_name, repo.track_file(track_name), track_dir)
         current_track = filter_included_tasks(current_track, filters_from_included_tasks(included_tasks))
